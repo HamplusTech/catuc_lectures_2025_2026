@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Interaction Programming and Dynamic Web</title>
+    <style>
+html {margin: 0 auto; width: 100%}
+      h1 {
+        color: red;
+      }
+
+      input {
+        border-radius: 15px;
+        margin-bottom: 5px;
+        padding: 10px;
+      }
+
+      input[type=button] {
+        background-color: blue;
+        color: white
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="" name='signinForm'>
+      <h1>Welcome to <em>CATUC</em>
+      </h1>
+      <div>
+        <input type="text" placeholder="Username" id="username" />
+      </div>
+      <div>
+        <input type="password" placeholder="Password" id="password" />
+      </div>
+      <div>
+        <input type="button" name="signin" value="Sign in" onclick="alert(signinForm.username.value)" />
+        <input type="reset" name="clear" value="Clear" />
+    </form>
+    <script>
+      //alert("Hello World! Welcome to CATUC");
+    </script>
+  </body>
+</html>

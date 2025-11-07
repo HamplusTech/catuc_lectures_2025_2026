@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON and REST API</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h1>Sign in</h1>
+        <div>
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+        </div>
+        <div>
+            <input type="password" name="userpass" id="userpass" placeholder="Enter Password">
+        </div>
+        <div>
+            <input type="button" value="Sign in" onclick="consoleOutput()">
+            <input type="reset" value="Clear">
+            <!-- <button type="button">Sign in</button>
+            <button type="reset">Clear</button> -->
+        </div>
+    </form>
+    <script>
+        function say_hello(){
+            alert("Hello! Good afternoon");
+        }
+
+        function consoleOutput(){
+            let username = document.getElementById('username')
+            let userpass = document.getElementById('userpass')
+            let data = {
+                "username" : username.value,
+                "password" : userpass.value
+            }
+            console.log(data)
+            alert("Data has been saved successfully. Thank you!")
+            username.value = ""
+            userpass.value = ""
+        }
+    </script>
+</body>
+</html>
