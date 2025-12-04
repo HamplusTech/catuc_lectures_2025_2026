@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Exam Portal</title>
+</head>
+<body>
+    <form action="" method="">
+        <div id="login">
+            <h1><em>Welcome to CATUC CBT Portal.</em> Please Enter your details</h1>
+            <fieldset>
+                <legend>Exam Details</legend>
+                <div>
+                    <input type="text" name="candName" id="candName" placeholder="Candidate's Name" required>
+                </div>
+                <div>
+                    <input type="number" name="candNumber" id="candNumber" placeholder="Candidate's Exam Number" required>
+                </div>
+                <div>
+                    <input type="button" value="Proceed" name="proceed" id="proceed">
+                    &nbsp; &nbsp; &nbsp;
+                    <input type="reset" value="Clear" name="clear" id="clear">
+                </div>
+            </fieldset>
+        </div>
+        </form>
+        <form>
+        <div id="exam" hidden>
+            <input type="button" value="Go Back" id="goBack" name="goBack">
+            <h1>Exam Questions</h1>
+            <fieldset>
+                <legend>Ensure to answer all</legend>
+                <ol>
+                    <li><h3>What is the capital of the North West region in Cameroon?</h3></li>
+                    <ol type="A">
+                        <li><label for="quest1opt1"><input type="radio" name="quest1" id="quest1opt1" value="1">Bamenda</label></li>
+                        <li><label for="quest1opt2"><input type="radio" name="quest1" id="quest1opt2" value="0">Yaounde</label></li>
+                        <li><label for="quest1opt3"><input type="radio" name="quest1" id="quest1opt3" value="0">Bambili</label></li>
+                        <li><label for="quest1opt4"><input type="radio" name="quest1" id="quest1opt4" value="0">Lagos</label></li>
+                    </ol>
+
+                    <li><h3>When was the last presidential election in Cameroon?</h3></li>
+                    <ol type="A">
+                        <li><label for="quest2opt1"><input type="radio" name="quest2" id="quest2opt1" value="0">October 2024</label></li>
+                        <li><label for="quest2opt2"><input type="radio" name="quest2" id="quest2opt2" value="0">October 2023</label></li>
+                        <li><label for="quest2opt3"><input type="radio" name="quest2" id="quest2opt3" value="1">October 2025</label></li>
+                        <li><label for="quest2opt4"><input type="radio" name="quest2" id="quest2opt4" value="0">October 2001</label></li>
+                    </ol>
+                </ol>
+            </fieldset>
+            <hr>
+            <fieldset>
+                <legend>Action Area</legend>
+                <input type="button" value="Submit" name="submit" id="submit">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Clear" name="cAns" id="cAns">
+            </fieldset>
+        </div>
+    </form>
+    <script src="./cbt_test.js"></script>
+</body>
+</html>
