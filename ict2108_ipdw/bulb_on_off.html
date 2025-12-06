@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On/Off</title>
+</head>
+<body>
+    <img src="./bulb_off.jpg" alt="" srcset="" id="bulb" height="70">
+    <hr>
+    <input type="button" value="On" id="switch">
+    <script>
+        document.getElementById("switch").onclick = function() {
+            if (this.value == "On"){
+                document.getElementById("bulb").setAttribute("src", "./bulb_on.jpg")
+                this.value = "Off"
+            } else {
+                document.getElementById("bulb").setAttribute("src", "./bulb_off.jpg")
+                this.value = "On"
+            }
+        }
+    </script>
+</body>
+</html>
