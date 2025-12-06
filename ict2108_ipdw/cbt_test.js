@@ -66,4 +66,15 @@ document.getElementById('submit').onclick = function() {
     scoreDB.push(sumAnswers)
 
     localStorage.setItem("SCORE", scoreDB)
+
+    document.getElementById('result').removeAttribute("hidden")
+    document.getElementById("exam").setAttribute("hidden", true)
+
+    document.getElementById('candidName').textContent = candName.value
+    document.getElementById('candidNumber').textContent = candNumber.value
+    document.getElementById('examScore').textContent = sumAnswers
+
+    document.getElementById('candidName').style.fontWeight = "bold"
+    document.getElementById('candidNumber').style.fontWeight = "bold"
+    document.getElementById('examScore').style.fontWeight = "bold"
 }
