@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Data to JSON</title>
+    <style>
+        table, td, th {
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+        
+        td, th {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Names</th>
+                <th>Gender</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ABC</td>
+                <td>M</td>
+                <td>2400</td>
+            </tr>
+            <tr>
+                <td>XYZ</td>
+                <td>F</td>
+                <td>3400</td>
+            </tr>
+            <tr>
+                <td>MNO</td>
+                <td>F</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>RST</td>
+                <td>M</td>
+                <td>500</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        // headers details
+        let th = document.getElementsByTagName('th')
+        let thData = []
+        for (let i = 0; i < th.length; i += 1) {
+            thData.push(th[i].textContent)
+        }
+
+        // rows and row data
+        const rows = [];
+        const rowCells = document.querySelectorAll('tbody tr');
+        rowCells.forEach(row => {
+            const rowData = {};
+            const cells = row.querySelectorAll('td');
+            cells.forEach((cell, index) => {
+                rowData[thData[index]] = cell.textContent.trim();
+            });
+            rows.push(rowData);
+        });
+        
+        // from Java obeject to JSON
+        const jsonString = JSON.stringify(rows, null, 2);
+        document.writeln(`<hr><h1> ${jsonString} </h1>`);
+    </script>
+</body>
+</html>

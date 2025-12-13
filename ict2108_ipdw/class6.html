@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <title>Class 6 - Local Data</title>
+</head>
+<body>
+    <h2>This page will refresh in 3 seconds</h2>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage Demo</title>
+</head>
+<body>
+  <h1>Cookies, Session Storage, and Local Storage</h1>
+
+  <div>
+    <h2>Cookies</h2>
+    <button id="setCookie">Set Cookie</button>
+    <button id="getCookie">Get Cookie</button>
+    <button id="deleteCookie">Delete Cookie</button>
+  </div>
+
+  <div>
+    <h2>Session Storage</h2>
+    <button id="setSessionStorage">Set Session Storage</button>
+    <button id="getSessionStorage">Get Session Storage</button>
+    <button id="clearSessionStorage">Clear Session Storage</button>
+  </div>
+
+  <div>
+    <h2>Local Storage</h2>
+    <button id="setLocalStorage">Set Local Storage</button>
+    <button id="getLocalStorage">Get Local Storage</button>
+    <button id="clearLocalStorage">Clear Local Storage</button>
+  </div>
+
+  <div>
+    <h2>Content is shown here</h2>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    // Demonstrating Cookies
+    document.getElementById("setCookie").onclick = function() {
+      document.cookie = "username=CATUC; max-age=3600; path=./"; // Cookie expires in 1 hour
+      document.getElementById("output").textContent = "Cookie 'username' set!";
+    };
+
+    document.getElementById("getCookie").onclick = function() {
+      const cookies = document.cookie.split(';');
+      let cookieValue = "Cookie not found!";
+      cookies.forEach(cookie => {
+        if (cookie.trim().startsWith("username=")) {
+          cookieValue = cookie.split('=')[1];
+        }
+      });
+      document.getElementById("output").textContent = "Cookie 'username' value: " + cookieValue;
+    };
+
+    document.getElementById("deleteCookie").onclick = function() {
+      document.cookie = "username=; max-age=0; path=./"; // Deletes the cookie
+      document.getElementById("output").textContent = "Cookie 'username' deleted!";
+    };
+
+    // Demonstrating Session Storage
+    document.getElementById("setSessionStorage").onclick = function() {
+      sessionStorage.setItem("school", "CATUC");
+      document.getElementById("output").textContent = "Session Storage 'sessionKey' set!";
+    };
+
+    document.getElementById("getSessionStorage").onclick = function() {
+      const sessionValue = sessionStorage.getItem("school") || "Session Storage not set!";
+      document.getElementById("output").textContent = "Session Storage 'school' value: " + sessionValue;
+    };
+
+    document.getElementById("clearSessionStorage").onclick = function() {
+      sessionStorage.clear(); // Clears all sessionStorage data
+      document.getElementById("output").textContent = "Session Storage cleared!";
+    };
+
+    // Demonstrating Local Storage
+    document.getElementById("setLocalStorage").onclick = function() {
+      localStorage.setItem("lecturer", "Hampo, J.A.C.");
+      document.getElementById("output").textContent = "Local Storage 'localKey' set!";
+    };
+
+    document.getElementById("getLocalStorage").onclick = function() {
+      const localValue = localStorage.getItem("lecturer") || "Local Storage not set!";
+      document.getElementById("output").textContent = "Local Storage 'lecturer' value: " + localValue;
+    };
+
+    document.getElementById("clearLocalStorage").onclick = function() {
+      localStorage.clear(); // Clears all localStorage data
+      document.getElementById("output").textContent = "Local Storage cleared!";
+    };
+  </script>
+</body>
+</html>
+
+</body>
+</html>

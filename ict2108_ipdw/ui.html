@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI in Java</title>
+</head>
+<body>
+    <form action="">
+        <h2>Select login option</h2>
+        <input type="radio" name="lopt" id="mail" value="1">Email
+        <input type="radio" name="lopt" id="phone" value="2">Phone
+        <div>
+            <input type="hidden" name="" id="email" placeholder="Email">
+            <input type="hidden" name="" id="tel" placeholder="Phone">
+        </div>
+    </form>
+    <script>
+        let phone = document.getElementById("tel")
+        let email = document.getElementById("email")
+        document.getElementById('mail').onchange = function () {
+            // email.type = "hidden"
+            if (email.type == "hidden") {
+                email.type = "email"
+                phone.type = "hidden"
+            } 
+            // else {
+            //     email.type = "hidden"
+            // }
+        }
+        
+        document.getElementById('phone').onclick = function () {
+            if (phone.type == "hidden") {
+                phone.type = "tel"
+                email.type = "hidden"
+            }
+        }
+    </script>
+</body>
+</html>

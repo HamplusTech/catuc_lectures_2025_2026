@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Exam Portal</title>
+</head>
+<body>
+    <form action="">
+        <h2>Please Select the right answer</h2>
+        <ol>
+            <h3><li>What is the capital of the North west region?</li></h3>
+            <ol type="A">
+                <label for="opt1">
+                    <li><input type="radio" name="quest1" id="opt1" value="1">Bamenda</li>
+                </label>
+                <li><input type="radio" name="quest1" id="" value="0">Widikum</li>
+                <li><input type="radio" name="quest1" id="" value="0">Ndop</li>
+                <li><input type="radio" name="quest1" id="" value="0">Ndu</li>
+            </ol>
+            <h3><li>What is the capital of the South West region?</li></h3>
+            <ol type="A">
+                <li><input type="radio" name="quest2" id="" value="0">Ekok</li>
+                <li><input type="radio" name="quest2" id="" value="0">Mamfe</li>
+                <li><input type="radio" name="quest2" id="" value="0">Adamawa</li>
+                <li><input type="radio" name="quest2" id="" value="1">Buea</li>
+            </ol>
+        </ol>
+        <div>
+            <button type="button" id="submit" name="finish" onclick="save_answers()">submit</button>
+        </div>
+    </form>
+    <script>
+        function save_answers() {
+            let answers = []
+            for (let a = 0; a < 2; a += 1) {
+                let tagName = `quest${a+1}`
+                // alert(tagName) 
+                let questOption = document.getElementsByName(tagName)
+
+                questOption.forEach(opt => {
+                    if (opt.checked) {
+                        answers.push(opt.value)
+                    }
+                });
+            }            
+            
+            let total = 0
+            answers.forEach(element => {
+                total += parseInt(element) 
+            });
+            alert(total)
+        }
+    </script>
+</body>
+</html>
