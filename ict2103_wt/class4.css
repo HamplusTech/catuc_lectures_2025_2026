@@ -1,0 +1,45 @@
+input {
+    display: block;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 20px;
+    border-style: none;
+    border-bottom: 1px solid black;
+}
+
+input[type=tel] {
+    background-color: blue;
+}
+
+div > input[type=tel]{
+    background-color: green;
+}
+
+div div input {
+    background-color: yellow;
+}
+
+* {
+    /* background: linear-gradient(green, red, yellow); */
+}
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: black;
+}
+
+tr:nth-child(odd) td:nth-child(even){
+    /* background-color: #fff; */
+}
+
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: red;
+}
+
+td:nth-child(3n){
+    /* background-color: yellowgreen; */
+}

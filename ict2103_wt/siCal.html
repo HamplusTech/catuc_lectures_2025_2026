@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator - Class 5</title>
+    <style>
+        input {
+            padding: 15px;
+            margin: 2px;
+            border-radius: 25px;
+        }
+        input[type=reset] {
+            background-color: red;
+            color: white;
+            font-size: larger;
+            border-style: none;
+        }
+
+        input[type=button] {
+            background-color: green;
+            color: white;
+            font-size: larger;
+            border-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+    <div>
+        <h1>Simple Interest Calculator</h1>
+    </div>
+    <div>
+        <input type="number" name="" id="principal" placeholder="Enter Principal">
+    </div>
+    <div>
+        <input type="number" name="" id="rate" placeholder="Enter Interest Rate in %">
+    </div>
+    <div>
+        <input type="number" name="" id="time" placeholder="Enter Duration in years">
+    </div>
+    <div>
+        <input type="button" value="Calculate" onclick="sim_calculate()">
+        <input type="reset" value="Clear">
+    </div>
+    <div id="result">
+
+    </div>
+    <script src="siCal.js"></script>
+</form>
+</body>
+</html>

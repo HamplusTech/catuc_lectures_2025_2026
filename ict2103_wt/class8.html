@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Intro</title>
+</head>
+<body>
+    <form action="">
+        <h1 onmouseover="document.getElementsByTagName('h1')[0].style.color = 'red'" onmouseout="document.getElementsByTagName('h1')[0].style.color = 'black'">Hello People of CATUC</h1>
+        <input type="text" name="username" id="username" oninput="displayText()">
+        <div id="display" style="height: 50px;"></div>
+        <input type="password" name="up" id="up" placeholder="User Password"><button type="button" id="show" onclick="showHide()">Show</button>
+    </form>
+    <script>
+        function showHide(){
+            let pass = document.getElementById('up')
+            let buttonSH = document.getElementById('show')
+            // alert(pass.type)
+            if (pass.type == 'password') {
+                pass.type = 'text'
+                buttonSH.textContent = "Hide"
+                buttonSH.style.backgroundColor = "green"
+                buttonSH.style.color = "white"
+            } else {
+                pass.type = 'password'
+                buttonSH.textContent = "Show"
+                buttonSH.style.backgroundColor = "red"
+                buttonSH.style.color = "white"
+            }
+        }
+
+        function displayText(){
+            let userText = document.getElementById("username")
+            let displayContent = document.querySelector("#display")
+            displayContent.innerHTML = userText.value
+        }
+
+        // document.getElementById("username").onclick = function() {
+        //     alert("Hello my gees")
+        // }
+
+        // document.getElementById("username").addEventListener("click", () => {
+        //     alert("Hello my gees")
+        // })
+    </script>
+</body>
+</html>
