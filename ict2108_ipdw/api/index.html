@@ -1,0 +1,53 @@
+<!-- <?php
+require("./api.php");
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple REST API Client (PHP + JS)</title>
+</head>
+<body>
+  <h2>Users from PHP REST API</h2>
+  <button id="load">Load Users</button>
+  <ul id="users"></ul>
+  
+  <!-- <form action="" method="post"> -->
+    <h3>Add New User</h3>
+    <input id="name" placeholder="Name">
+    <input id="role" placeholder="Role">
+    <button id="add">Add User</button>
+  <!-- </form> -->
+
+  <script>
+    // const api = 'http://localhost/card_app/api/api.php';
+    // const api = 'http://penguin.linux.test/card_app/api/';
+    const api = "/card_app/api/api.php"; //use the server URI 
+
+    document.getElementById('load').onclick = async () => {
+      const res = await fetch(api);
+      const users = await res.json();
+      const list = document.getElementById('users');
+      list.innerHTML = '';
+      users.forEach(u => {
+        const li = document.createElement('li');
+        li.textContent = `${u.id}: ${u.name} - ${u.role}`;
+        list.appendChild(li);
+      });
+    };
+
+    document.getElementById('add').onclick = async () => {
+      const name = document.getElementById('name').value;
+      const role = document.getElementById('role').value;
+      await fetch(api, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ name, role })
+      });
+      alert('User added successfully!');
+      // alert('User ( '+ JSON.stringify({name, role}) + ') added!');
+    };
+  </script>
+</body>
+</html>
