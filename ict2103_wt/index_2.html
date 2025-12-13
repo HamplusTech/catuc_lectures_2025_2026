@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - Class 4</title>
+    <style>
+        button {
+            padding: 25px;
+            margin: 5px;
+            font-size: 25px;
+            font-family: elephant;
+        }
+
+        input {
+            padding: 30px;
+            margin: 10px;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <form name="myCalculator">
+        <div>
+            <input type="text" name="screen" id="screen" disabled>
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>+</button>
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+        </div>
+        <div>
+            <button type="button" value="1" onclick="document.myCalculator.screen.value += this.value">1</button>
+            <button type="button" value="2" onclick="document.myCalculator.screen.value += this.value">2</button>
+            <button type="button" value="3" onclick="document.myCalculator.screen.value += this.value">3</button>
+            <button type="button" value="*" onclick="document.myCalculator.screen.value += this.value">*</button>
+        </div>
+        <div>
+            <button type="button" value="." onclick="document.myCalculator.screen.value += this.value">.</button>
+            <button type="button" value="0" onclick="document.myCalculator.screen.value += this.value">0</button>
+            <button type="button" onclick="document.myCalculator,screen.value = ''">C</button>
+            <button type="button" onclick="document.myCalculator.screen.value = eval(document.myCalculator.screen.value)">=</button>
+        </div>
+    </form>
+</body>
+</html>
